@@ -1,0 +1,248 @@
+/* Resetuje domyślne ustawienia stylu (marginesy, itd.) w przeglądarce */
+@import url(reset.css);
+/* Tworzy ramkę wokół strony */
+@import url(page-border.css);
+
+/* Ustawia tło, zdjęcie w tle oraz czcionkę na stronie */
+html {
+    background-color: #ffc107; 
+    background-image: url(assets/tlo.jpg); /* ustawiam zdjęcie w tle */
+    background-repeat: no-repeat; /* bg nie będzie się powtarzać */
+    background-attachment: fixed; /* na stałe przyczepione */
+    background-size: contain; /* będzie skalowany by obrazek mógł być w pewnił widoczny */
+    font-family: 'Playfair Display', serif;
+    font-size: 62.5%; /* 10 pikseli */
+    color: #48504e;
+}
+
+/* Kolory jako "referencje", fajnie je mieć "pod ręką" */
+.orange { color: #ffc107; }
+.grey { color: #48504e; }
+.lightgrey { color: #d4d4d3; }
+
+/* Plik reset.css nadpisał domyślne działanie strong i dlatego musimy je poprawić. */
+strong { font-weight: bold; }
+
+/* Element w tym bloku będzie "podkreślony", będzie napisany kursywą. */
+em { background-color: rgba(255, 255, 255, 0.8); }
+
+/* Przekreślenie tekstu */
+.deleted { text-decoration: line-through; }
+
+
+/* ************************************** 
+    Zwijane menu 
+**************************************** */
+header {
+    display: none; /* nie będzie wyświetlan */
+    background: #48504e; /* kolor tła w rozwijanym menu */
+    color: #fff; /* kolor czcionki w rozwijanym menu */ 
+    height: 30rem; /* rozmiary rozwijanego menu */ 
+    padding: 10rem;
+}
+
+/* Wygląd przycisk rozwijanego menu oraz jego położenie */
+.menu {
+    background-image: url(assets/menu-hamburger.svg);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    right: 0; /* będzie maksymalnie z prawej */
+    height: 3.2rem;
+    width: 3.2rem;
+    margin: 1rem;
+    padding: 1rem;
+    z-index: 9999;
+}
+
+/* Gdy najedziemy na przycisk to menu się rozwinie */
+.hover-me:hover header {  display: block; }
+
+nav { float: right; }
+
+ul {
+    font-size: 2.3rem;
+    line-height: 1.75;
+}
+
+nav li {
+    text-align: right; /* tekst wyrównywany do prawej */
+    background: url(assets/strzalka.svg); /* strzałki z boku jako tło */
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 4rem;
+    line-height: 1.5rem;
+    margin: 3rem;
+}
+
+form {
+    float: left;
+    width: 35rem;
+}
+
+/* Pola wejściowe oraz tekstowe */
+input, textarea {
+    width: 35rem;
+    background: #fff;
+    border: 2px #d4d4d3 solid;
+    margin: 0.75rem;
+    padding: 1rem;
+}
+
+/* Przycisk wyślij */
+button {
+    background: #ffc107;
+    border: none;
+    padding: 2rem 6rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.75rem;
+    margin-right: -3.15rem;
+    float: right;
+    cursor: pointer; /* wyświetla paluszek gdy najedziemy */
+}
+/* 
+    ******************************************************
+*/
+
+h1 {
+    font-size: 3.7rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3.5rem; /* 35px */
+    margin: 4.0rem;
+    display: inline-block; /* zachowuje się jak obiekt inline, ale możemy nadawać wysokość/szerokość i np. zmiana marginesu ma sens ponieważ blok nie zajmuje wtedy szerokości strony tylko tyle ile zajmuje tekst zawarty w bloku */
+}
+
+h3 { font-size: 3.1rem; }
+
+h2 { font-size: 2.7rem; }
+
+h3, h2 {
+    color: #fff;
+    background-color: #48504e; 
+    padding: 1.5rem;
+    display: inline-block; /* bloki liniowe których rozmiar mogę zmieniać, ponieważ nie rozkładają się na całej szerokości strony */
+}
+
+hgroup {
+    display: inline-block;
+    margin-left: -25%; /* przesunięcie w lewo względem <article> */
+    position: relative; /* kontekst pozycjonujący dla nagłówka h3 */   
+}
+
+h3 {
+    position: absolute; /* pozycjonowanie względem hgroup> */
+    right: 0;
+    bottom: 10%;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 1.55; /* odstęp między liniami */
+}
+
+/* Streszczenie tekstu */
+.summary { 
+    font-size: 2.4rem; 
+    font-style: italic;
+}
+
+/* Symbol kropki pod streszczeniem. */
+.dot {
+    width: 1rem;
+    height: 1rem;
+    background-color: #48504e;
+    margin: 3rem auto; /* margines góra dół i będzie wycentrowana */
+    border-radius: 20px; /* kuleczka */
+}
+
+/* Stopka */
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 6;
+}
+
+/* Akapit znajdujący się w stopce*/
+footer p {
+    font-size: 1.4rem;
+    color: #d4d4d3; 
+}
+
+/* sekcja z elementami */
+section {
+    width: 50%; /* 50% rozmiaru przeglądarki */
+    min-width: 600px; /* Blok nie będzie zajmował mniej niż 600px */
+    max-width: 850px; /* Blok nie będzie się nieskończenie rozszerzał */
+    position: absolute; /* pozycjonowany względem najbliższego przodka czyli tutaj względem <body> */
+    right: 5%;
+}
+
+article { margin-bottom: 6rem; }
+
+.text {
+    margin-top: 4rem;
+    column-count: 2;
+}
+
+figure {
+    margin-left: -25%;
+    margin-top: 20%;
+    float: left; 
+}
+
+/* Przycisk przejścia do następnej strony. */
+.button-more {
+    display: inline-block;
+    border: 1.5px dashed #000;
+    font-size: 5rem;
+    padding: 1rem 1.5rem;
+    text-decoration: none; /* usuwa podkreślenie przy strzałce */
+    position: absolute; /* będzie zmieniał położenie względem ostatniego obiektu, czyli article */
+    right: 0%; /* w odległości 0 od prawej strony, czyli centralnie przy prawej krawędzi article */
+   
+}
+
+/* ************************
+    Responsywność 
+*************************** */
+
+/* pierwsza redukcja */
+@media all and (max-width: 1280px) {
+    
+    html {  background: #ffc107; } /* tła już nie będzie z boku */
+    
+    section { width: 75%; }  /* sekcja z tekstem itp. będzie zajmowała większą część strony */
+    
+    /* tło zdjęcie pojawia się u góry strony */
+    .bg {
+        background-image: url(assets/pexels-photo-57750.jpeg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100px;
+    }
+}
+
+/* druga redukcja */
+@media all and (max-width: 768px) {
+    
+    /* zmiana położenia nagłówków */
+    hgroup { margin-left: 0; } 
+    
+    /* zdjęcie móżdżka znika */
+    figure { display: none; }
+    
+    /* sekcja zajmuje więcej miejsca */
+    section {
+        width: 90%; 
+        min-width: 300px; 
+        position: absolute;  /* nie zauważyłem różnicy z tym i bez tego */
+    }
+    
+    .text {
+        margin-top: 4rem;
+        column-count: 1;
+    }
+}
