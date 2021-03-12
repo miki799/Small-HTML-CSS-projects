@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="flex.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel=stylesheet href="header.css">
+  <link rel=stylesheet href="video.css">
+  <!-- Czcionki jak na JuTube -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <title>JuTube</title>
+  <script src="base-js.js"></script>
+  <link 
+    rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <!-- pasek górny = rozwijane menu, logo, wyszukiwarka, przyciski -->
+    <nav class="site-nav">        
+        <!-- Menu rozwijane -->
+        <button class="site-nav_menu-trigger">
+            <!-- 
+                Font Awesome - zestaw ikon 
+                dodaje ikonkę hamburgera
+            -->
+            <span class="fas fa-bars"></span>
+        </button>
+        <!-- logo JuTube -->
+        <h1 class="site-nav_logo-wrapper">
+            <a href="#" class="site-nav_logo-link">
+                <!-- <img src="https://place-hold.it/80x24/ff0000/ffffff&text=JuTube" alt="JuTube"> -->
+                <img src="JuTube.jpg" width="80" height="24" alt="JuTube">
+            </a>
+        </h1>
+        <!-- search bar z przyciskiem -->
+        <div class="site-nav_search-wrapper">
+            <!-- nie rozumiem do czego to będzie służyć -->
+            <button type="button" class="site-nav_search-back">
+                <span class="fas fa-arrow-left"></span>
+            </button>
+            <input placeholder="Search"  type="search" class="site-nav_search-input">
+            <button type="button" class="site-nav_search-trigger">
+                <span class="fas fa-search"></span>
+            </button>
+        </div>     
+        <!-- reszta przycisków -->
+        <ul class="site-nav_user-actions">
+            <!-- przycisk wyszukiwania pokazujący się gdy rozmiar strony będzie mały -->
+            <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger is-mobile-search-trigger">
+                    <span class="fas fa-search"></span>
+                </button>
+            </li>
+            <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger">
+                    <span class="fas fa-video"></span>
+                </button>
+            </li>
+            <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger">
+                    <span class="fas fa-th"></span>
+                </button>
+            </li>
+              <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger">
+                    <span class="fas fa-comment"></span>  
+                </button>
+            </li>
+              <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger">
+                    <span class="fas fa-bell"></span>
+                </button>
+            </li>
+              <li class="site-nav_user-action">
+                <button type="button" class="site-nav_action-trigger is-user-avatar">
+                    <!-- będzie dodany jako css-owa ikonka -->  
+                </button>
+            </li> 
+        </ul>
+    </nav> 
+    
+    <!-- pasek kanału -->
+    <header class="channel-header">
+        <img src="https://place-hold.it/782x127/696e9e/ffffff&text=KanalNaJuTubie" class="channel-header_hero" alt="">
+        <div class="channel-header_details">
+            <img src="https://place-hold.it/100x100/696e9e/ffffff&text=Avatar" class="channel-header_avatar">
+            <div class="channel-header_wrapper">
+                <span class="channel-header_name">
+                    Kanał na JuTubie
+                </span>
+                <span class="channel-header_subs-count">
+                    12222 subskrypcji
+                </span>
+            </div>
+            <button class="channel-header_subscribe">
+                Subskrybujesz (12k)
+            </button>
+            <button class="channel-header_bell fas fa-bell"></button>
+        </div>
+        <nav class="channel header-nav">
+            <button class="channel-header_slide-button channel-header_prev fas fa-chevron-left">
+            </button>
+            
+            <ul class="channel-header_tabs">
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link">
+                        Główna
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link active channel-header_link_active">
+                        Wideo
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link">
+                        Playlisty
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link">
+                        Społeczność
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link">
+                        Kanały
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <a href="" class="channel-header_link">
+                        Informacje
+                    </a>
+                </li>
+                <li class="channel-header_tab">
+                    <button class="channel-header_search fas fa-search"></button>
+                </li>
+            </ul>
+            <button class="channel-header_slide-button channel-header_next fas fa-chevron-right">
+            </button>
+        </nav>
+    </header>
+    
+    <main class="video-section">
+        <nav class="video-section_nav">
+            
+            <label for="video-section_filter" class="video-section_label-primary">
+                Przesłane filmy
+                <span class="fas fa-caret-down"></span>
+            </label>
+            <select id="video-section_filter" class="video-section_filter" name="video-filter">
+                <option value="all">
+                    Wszystkie filmy
+                </option>
+                <option value="uploaded">
+                    Przesłane filmy
+                </option>
+                <option value="live">
+                    Na żywo
+                </option>
+            </select>
+            
+            <button class="video-section_play-all">
+                Odtwórz wszystkie
+            </button>
+        
+             <label for="video-section_sort" class="video-section_label-secondary">
+                 <span class="fas fa-align-left"></span>
+                 Sortuj według
+            </label>
+            <select id="video-section_sort" class="video-section_sort" name="video-sort">
+                <option value="most-popular">
+                    Najbardziej popularne
+                </option>
+                <option value="added-desc">
+                    Najdawniej dodane
+                </option>
+                <option value="added-asc">
+                    Ostatnio dodane
+                </option>
+            </select>
+        </nav>
+        
+        <ul class="video-section_list">
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 19
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, rok temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 18
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 2 lata temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 17
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 3 lata temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 16
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 4 lata temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 15
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 5 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 14
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 6 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+             <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 13
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 7 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 12
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 8 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 11
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 9 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 10
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 10 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 9
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 11 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 8
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 12 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 7
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 13 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 6
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 14 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 5
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 15 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 4
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 16 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 3
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 17 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 2
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 18 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+            <li class="video-section_video">
+                <a href="#" class="video-section_video-link">
+                    <div class="video-section_thumbnail">
+                        <button class="video-section_watch-later">
+                            <span class="fas fa-clock"></span>
+                        </button>
+                        <span class="video-section_total-time"> 12:33 </span>
+                    </div>
+                    <h4 class="video-section_video-name">
+                        Wielki Mix JuTube 1
+                        <button class="video-section_more-details">
+                            <span class="fas fa-ellipsis-v"></span>
+                        </button>
+                    </h4>
+                    <span class="video-section_details">
+                      6.9k wyświetleń, 19 lat temu
+                    </span>
+                    <div class="video-section_badges">
+                        <span class="video-section_badge">
+                            cc
+                        </span>
+                        <span class="video-section_badge">
+                            napisy
+                        </span>
+                    </div>
+                </a>
+            </li>
+            
+        </ul>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+/* Górny pasek YT menu nawigacyjne, logo, searchbar, przyciski */
+ 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+body {
+    background: #ddd;
+}
+
+.site-nav {
+    height: 56px;
+    padding: 13px;
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+
+    background: #fff;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* wszystkie dzieci w kontenerze site-nav nie będą się kurczyć */
+.site-nav > * {
+    flex-shrink: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.site-nav .site-nav_search-input {
+    flex-shrink: 1;
+    flex-grow: 1;
+    border: 2px solid #ddd;
+    padding: 0 5px;
+    min-width: 80px;
+    padding-right: 40px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.site-nav_search-trigger {
+    border: 2px solid #ddd;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    background: #f4f4f4;
+    flex-shrink: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+  
+.site-nav_search-trigger .fas {
+    padding: 0;
+    margin: 0;
+}
+
+.site-nav_search-back {
+    align-self: center;
+    display: none;
+}
+
+.is-mobile-search-trigger {
+    display: none;
+}
+    
+
+.site-nav .fas, .site-nav_search-input {
+    font-size: 18px;
+}
+
+.site-nav_user-actions {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+    align-items: center;
+    width: 250px;
+    justify-content: space-between;
+}
+
+.site-nav_user-actions .fas {
+    margin-right: 0;
+}
+
+.site-nav .fas {
+    padding: 8px;
+    color: #909090;
+}
+
+.site-nav_search-wrapper {
+    display: flex;
+    margin: 0 50px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-width: 100px;
+    height: 30px;
+}
+
+.site-nav_search-input {
+    background-image: url(keyboard-svgrepo-com.svg);
+    background-repeat:no-repeat;
+    background-position: right;
+}
+
+.is-user-avatar::after {
+    content: '';
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background: #ddd;
+    border-radius: 16px;
+}
+
+@media all and (max-width: 656px) {
+    .is-mobile-search-trigger,
+    .site-nav_search-back {
+        display: block;
+    }
+    
+    .site-nav_search-wrapper {
+        display: none;
+    }
+}
