@@ -1,0 +1,137 @@
+html * {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 5% 25%;   
+}
+
+.container {
+    margin: 0 auto;
+    background-color: whitesmoke;
+    background-position: center;
+    padding: 25px;
+    font-size: 1.6rem;
+}
+
+.headers-group {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.headers-group h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.headers-group h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.short-summary {
+    text-align: center;
+    border-style: solid;
+    border-color: #d4d4d3;
+}
+
+.short-summary p {
+    font-size: 1.4rem;
+    margin: 5px 5px;
+}
+
+.image {
+    margin: 10px 0;
+    border-style: solid;
+    border-color: #d4d4d3;
+}
+
+.image img{
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    margin: 25px auto;
+}
+
+.image-caption {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.image-caption span {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 5px;
+    background-color: #d4d4d3;
+}
+
+.timeline {
+    margin-top: -15px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.timeline ul {
+    list-style-type: none;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 1.6rem;
+}
+
+.short-end {
+    margin-top: -30px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.short-end Cite a{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+footer {
+    font-size: 1rem;
+}
+
+i {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: black;
+}
+
+a:active, a:hover {
+    color:royalblue;
+}
+
+
+
+@media all and (max-width: 1320px) {
+    .image img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .short-summary p {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width: 722px) {
+    .image img {
+        width: 150px;
+        height: 150px;
+    }
+}
