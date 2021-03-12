@@ -1,0 +1,143 @@
+
+html {
+    background-color: aliceblue;
+    font-size: 62.5%;
+    font-family: 'Shippori Mincho B1', serif;
+    padding: 0;
+    margin: 0;
+    min-width: 432px;
+}
+
+.form-title {
+    font-size: 2.4rem;
+    background-color: aliceblue;
+    text-align: center;
+    font-style: italic
+}
+
+main {
+    background-color: whitesmoke;
+    margin: 0 35%;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.main-div {
+    background-size: contain;
+    font-size: 1.4rem;
+    display: grid;
+    padding: 0;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.main-div p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.form-rows {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(8, auto);
+}
+
+.fields {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.labels {
+    margin-top: 2rem;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.submit-button {
+    
+    margin-top: 3rem;
+    justify-self: center;
+    grid-column: 2 / 3;
+    grid-row: 8 / 9;
+}
+
+.submit-button button {
+    font-family: 'Shippori Mincho B1', serif;
+}
+
+/* Pola wejściowe oraz tekstowe */
+textarea {
+    font-family: 'Shippori Mincho B1', serif;
+    width: 20rem;
+    background: #fff;
+    border: 2px #d4d4d3 solid;
+    padding: 1rem;
+}
+
+.input-fields {
+    width: 20rem;
+    background: #fff;
+    border: 2px #d4d4d3 solid;
+}
+
+.dropdown {
+    font-family: 'Shippori Mincho B1', serif;
+    width: 20rem;
+    background: #fff;
+    border: 2px #d4d4d3 solid;
+}
+
+@media all and (max-width: 1172px) {
+
+    main {
+        margin: 0 20%;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+    }
+    .main-div, .main-div p {
+        font-size: 1.4rem;
+        align-content: center;
+    }
+    .form-rows {
+        display: block;
+    }
+    .fields {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .labels {
+        margin-right: 0rem;
+        text-align: center;
+    }
+    /* Pola wejściowe oraz tekstowe */
+    textarea {
+        font-family: 'Shippori Mincho B1', serif;
+        width: 20rem;
+        height: 5rem;
+        background: #fff;
+        border: 2px #d4d4d3 solid;
+    }
+
+    .input-fields {
+        width: 20rem;
+        height: 2.5rem;
+        background: #fff;
+        border: 2px #d4d4d3 solid;
+    }
+
+    .dropdown {
+        font-family: 'Shippori Mincho B1', serif;
+        width: 20rem;
+        background: #fff;
+        border: 2px #d4d4d3 solid;
+    }
+
+    .submit-button {
+        text-align: right;
+    
+    }
+    
+}
